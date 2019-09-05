@@ -93,7 +93,7 @@ const avgForRow = (eventId, formatId, row) => {
       // For FM mo3, the value doesn't need to be taken as moves!
       // 5 would return the WR marker for the best.
       let avgDetected = timeToValue(row[6 + maxAttempts]);
-      if (!avgDetected && eventId === '333bf') {
+      if (!avgDetected && ['333bf', '444bf', '555bf'].includes(eventId)) {
         // Let's compute the mean
         let attempts = attemptsFromResultRow(eventId, formatId, row);
         if (attempts.length !== 3)
